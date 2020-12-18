@@ -17,7 +17,11 @@ Do the following:
 
    HINT: no function required
 */
+const votingAge = 18;
 
+if (votingAge >= 18) {
+  console.log(true);
+}
 
 
 /*
@@ -30,7 +34,17 @@ Do the following:
 
    HINT: no function required
 */
+let val1 = 3;
+let val2 = 5;
 
+if (val1 < val2) {
+  val1 = val1 + val2;
+}
+console.log(val1);
+
+
+
+// NOT WORKING!!!
 
 
 
@@ -46,8 +60,10 @@ Do the following:
    HINT: look up the Number method
 */
 
-
-
+let exstring = "1999";
+Number(exstring);
+console.log(exstring);
+// NOT WORKING!!
 
 /*
 Task 1d - Multiply
@@ -58,11 +74,11 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(a, b) {
+    return a * b;
   }
 
-
+multiply(2, 4);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -74,9 +90,11 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(age){
+    return age * 7;
 }
+
+dogYears(7);
 
 
 
@@ -107,10 +125,32 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(weight, age) {
+    if (age >= 1) {
+      if (weight < 6) {
+        console.log("if1 return");
+        return weight * 0.05;
+      } else if (6 <= weight >= 10) {
+        console.log("if2 return");
+        return weight * 0.04;
+      } else if (11 <= weight <= 15) {
+        console.log("if3 return");
+        return weight * 0.03;
+      } else if (weight > 15) {
+        console.log("if4 return");
+        return weight * 0.02;
+      }
+    } else if ((1 / 6) <= age < (1 / 3)) {
+      return weight * 0.1;
+    } else if ((1 / 3) <= age < (7 / 12)) {
+      return weight * 0.05;
+    } else if ((7 / 12) <= age < 1) {
+      return weight * 0.04;
   }
+}
 
+// NOT WORKING!! RETURNING AT IF2 NOT IF3 UNSURE WHY
+console.log(hungryDog(8, 1));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
