@@ -61,8 +61,9 @@ Do the following:
 */
 
 let exstring = "1999";
-Number(exstring);
-console.log(exstring);
+let number = parseInt(exstring);
+console.log(number);
+
 // NOT WORKING!!
 
 /*
@@ -127,30 +128,25 @@ Use the hungryDog function and feeding requirements below to do the following:
 
 function hungryDog(weight, age) {
     if (age >= 1) {
-      if (weight < 6) {
-        console.log("if1 return");
+      if (weight < 5) {
         return weight * 0.05;
-      } else if (6 <= weight >= 10) {
-        console.log("if2 return");
+      } else if (weight >=6 && weight <= 10) {
         return weight * 0.04;
-      } else if (11 <= weight <= 15) {
-        console.log("if3 return");
+      } else if (weight >= 11 && weight <= 15) {
         return weight * 0.03;
       } else if (weight > 15) {
-        console.log("if4 return");
         return weight * 0.02;
       }
-    } else if ((1 / 6) <= age < (1 / 3)) {
+    } else if (age >= (1 / 6)  && age <= (1 / 3)) {
       return weight * 0.1;
-    } else if ((1 / 3) <= age < (7 / 12)) {
+    } else if (age > (1 / 3) && age <= (7 / 12)) {
       return weight * 0.05;
-    } else if ((7 / 12) <= age < 1) {
+    } else if (age > (7 / 12) && age < 1) {
       return weight * 0.04;
   }
 }
 
-// NOT WORKING!! RETURNING AT IF2 NOT IF3 UNSURE WHY
-console.log(hungryDog(8, 1));
+console.log(hungryDog(15, 1));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -174,11 +170,75 @@ Use the game function below to do the following:
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
+let randGen = () => Math.floor(Math.random() * 3)
+
+// 0 will be rock 
+// 1 will be paper
+// 2 will be scissors
+
 function game(user, computer){
-    /*add your code here*/
+    user.toLowerCase();
+    switch (user) {
+      case "rock":
+        user = 0;
+        break;
+      case "paper":
+        user = 1;
+        break;
+      case "scissors":
+        user = 2;
+        break;
+      default:
+        console.log("please pick between 'rock', 'paper' and 'scissors'");
+        break;
+    }
+    switch (computer) {
+      case "rock":
+        computer = 0;
+        break;
+      case "paper":
+        computer = 1;
+        break;
+      case "scissors":
+        computer = 2;
+        break;
+      default:
+        console.log("please pick between 'rock', 'paper' and 'scissors'");
+        break;
+    }
+    if (user === computer) {
+      return "it's a tie";
+    } else {
+      switch (user) {
+        case 0:
+          if (computer === 1) {
+            return "you lose!";
+          } else {
+            return "you win!"
+          }
+          break;
+        case 1:
+          if (computer === 2) {
+            return "you lose!";
+          } else {
+            return "you win!"
+          }
+          break;
+        case 2:
+          if (computer === 0) {
+            return "you lose!";
+          } else {
+            return "you win!"
+          }
+          break;
+        default:
+          console.log("something went wrong!!");
+          break;
+      }
+    }
 }
   
-  
+ game("rock", randGen);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -191,10 +251,11 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+function miles(kilometers) {
+    return (kilometers * 0.621371)
   }
 
+miles(10);
 
 
 //Task 5b - Feet to CM
@@ -205,11 +266,11 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
+function feet(cm) {
+    return (cm / 30.48);
   }
  
-
+feet(10);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
