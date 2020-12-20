@@ -272,6 +272,8 @@ function feet(cm) {
  
 feet(10);
 
+
+
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
 // Let's Sing 99 Bottles of Soda on the Wall!
@@ -335,11 +337,17 @@ Using the vowelCounter function below do the following:
   HINT - try looking up the .includes() method
 */
 
-
-function vowelCounter(/*add your code here*/) {
-    /*add your code here*/
+function vowelCounter(string) {
+  string.toLowerCase();
+  Array.from(string);
+  let vowelNum = ''
+  for (let i = 0; i < string.length; i++) {
+    if ((string[i] === 'a') || (string[i] === 'e') || (string[i] === 'i') || (string[i] === 'o') || (string[i] === 'u') || (string[i] === 'y')) {
+      vowelNum++;
+    }
+  }
+ return vowelNum;
 }
-
 
 
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
