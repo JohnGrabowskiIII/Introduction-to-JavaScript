@@ -44,7 +44,7 @@ console.log(val1);
 
 
 
-// NOT WORKING!!!
+// TEST NOT EVALUATING THIS QUESTION
 
 
 
@@ -64,7 +64,7 @@ let exstring = "1999";
 let number = parseInt(exstring);
 console.log(number);
 
-// NOT WORKING!!
+// TEST NOT EVALUATING THIS QUESTION
 
 /*
 Task 1d - Multiply
@@ -272,6 +272,8 @@ function feet(cm) {
  
 feet(10);
 
+
+
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
 // Let's Sing 99 Bottles of Soda on the Wall!
@@ -282,9 +284,11 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
+function annoyingSong(num) {
+  for (let i = num; i > 0; num--) {
+    return (num + " bottles of soda on the wall, " + num + " bottles of soda, take one down pass it around " + (num - 1) +" bottles of soda on the wall");
   }
+}
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -302,9 +306,22 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
+function grade(score) {
+  let letter = ""
+  if (score < 60) {
+    letter = "n F";
+  } else if (score < 70) {
+    letter = " D";
+  } else if (score < 80) {
+    letter = " C";
+  } else if (score < 90) {
+    letter = " B";
+  } else {
+    letter = "n A";
   }
+  console.log("you got a" + letter);
+  return ("you got a" + letter);
+}
   
   
 
@@ -320,11 +337,17 @@ Using the vowelCounter function below do the following:
   HINT - try looking up the .includes() method
 */
 
-
-function vowelCounter(/*add your code here*/) {
-    /*add your code here*/
+function vowelCounter(string) {
+  string.toLowerCase();
+  Array.from(string);
+  let vowelNum = ''
+  for (let i = 0; i < string.length; i++) {
+    if ((string[i] === 'a') || (string[i] === 'e') || (string[i] === 'i') || (string[i] === 'o') || (string[i] === 'u') || (string[i] === 'y')) {
+      vowelNum++;
+    }
+  }
+ return vowelNum;
 }
-
 
 
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
